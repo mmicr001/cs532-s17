@@ -14,7 +14,7 @@ with urllib.request.urlopen(req) as res:
 	for link in soup.find_all('a'):
 		linkReq = urllib.request.Request(link.get('href'))
 		with urllib.request.urlopen(linkReq) as linkRes:
-			if('pdf' in linkRes.info()['Content-Type'] ):
+			if('pdf' in linkRes.info()['Content-Type'] and (linkRes.code== 200) ):
 				print("First URI : " + link.get('href'))
 				print("Last URI  : {}".format(linkRes.geturl()))
 				print("Bytes: " + linkRes.info()['Content-length'] +"\n")
