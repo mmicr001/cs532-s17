@@ -1,4 +1,3 @@
-The file named tweepy_testing.py contains all the functions that are used for Part 1 (i.e. Getting tweets, 
-extracting links, saving to file, etc)
+The file named tweepy_testing.py contains all the functions that are used for Part 1 (i.e. Getting tweets, extracting links, saving to file, etc)
 
 the main.py serves simply as means to manually choose how many tweets to download and what file to save them in.
