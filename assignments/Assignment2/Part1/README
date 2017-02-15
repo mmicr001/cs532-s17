@@ -3,4 +3,3 @@ The file named tweepy_testing.py contains all the functions that are used for Pa
 The main.py serves simply as means to manually choose how many tweets to download and what file to save them in.
 
 The "links1000" file contains all the 1000 unique links extracted from twitter.
-The "MemSum1000" file contains the number of memntos recorded for each URI listed in "links1000"
