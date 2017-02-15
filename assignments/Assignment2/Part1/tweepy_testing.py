@@ -54,13 +54,16 @@ def getAllTheFinalURI(links):
 	for link in links:
 		try:
 			uri = getFinalURI(link)
-			print uri
-			if not(uri in uris):
-				uris.append(uri)
-				print(".")
-				cnt = cnt +1
-			if cnt == 1000:
-				break
+			print uri		
+			if 'twitter' not in uri:
+				print ("Good Link")
+				if not(uri in uris):
+					uris.append(uri)
+					cnt = cnt +1
+				if cnt == 1000:
+					break
+			else:
+				print ("Twitter Link")
 		except:
 			i = 0            
 	return uris
@@ -87,7 +90,9 @@ def extractLinkFromTweet(tweet):
 		link = extractLink(tweet['retweeted_status']['text'])
 	else:
 		link = extractLink(tweet['text'])
+
 	return link
+		
 
 def extractLink(text):
 		regex = r'https?://t.co/[^\s]*'
@@ -123,5 +128,5 @@ def collectTheTweets(noTweets):
 	stream = Stream(auth, l)
 
     #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
-	stream.filter(track=['python', 'javascript', 'ruby', 'trump', 'cnn', 'time', 'articles'])
+	stream.filter(track=['kexp', 'Rick and Morty', 'Game of Thrones', 'Ashton Kutcher', 'Richard Wolff', 'cnn', 'time', 'articles','Matt Taibbi'])
 	return l.jDatas
