@@ -13,9 +13,9 @@ TFIDF      Term       Total      TF         IDF        URIs
 0.0155     2           1742       0.0011     13.5222     http://www.reuters.com/article/us-usa-trump-russia-ukraine-idUSKBN15U0U0
                            
 0.0119     1           1137       0.0009     13.5222     http://www.iranfocus.com/en/index.php?option=com_content&view=article&id=31248&catid=4&Itemid=109
-                                    
-0.0110     1           1228       0.0008     13.5222     http://www.aptraining.co.uk/apply-now/?platform=hootsuite
 
 0.0108     1           1247       0.0008     13.5222     http://cnnphilippines.com/world/2017/02/15/us-special-ops-isis-fighters-killed.html
                 
 0.0106     4           5096       0.0008     13.5222     https://themoscowtimes.com/articles/russias-alleged-inf-violation-isnt-so-clear-cut-57161
+
+0.0089     2           3026       0.0007     13.5222     http://www.newyorker.com/news/john-cassidy/its-time-for-a-proper-investigation-of-trumps-russia-ties
