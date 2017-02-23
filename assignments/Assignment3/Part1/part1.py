@@ -11,7 +11,6 @@ def getProcessedHTML(filename):
 	f = open(filename,'r')
 	o1 = open("Raw",'w')
 	o2 = open("Processed",'w')
-
 	i=0
 	
 	for line in f:
@@ -20,8 +19,8 @@ def getProcessedHTML(filename):
 		rawHTML = getHTML(line)
 		processedHTML = getText(rawHTML)	
 
-		o1.write(str(rawHTML)+"\n")		#(json.dumps(rawHTML) )
-		o2.write(str(processedHTML)+"\n"	)				#(json.dumps(processedHTML))
+		o1.write(str(rawHTML)+"\n")		
+		o2.write(str(processedHTML)+"\n"	)				
 
 def getHTML(uri):
 	print ("inside getHTML")
