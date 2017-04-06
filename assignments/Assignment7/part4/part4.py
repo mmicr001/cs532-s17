@@ -5,7 +5,7 @@ data,mov = re.loadMovieLens()
 
 f = open("MY Correlated movies",'w')
 
-sim = re.getRecommendations(data,'156')
+sim = re.topMatches(data,'156')
 top = sim[0:5]
 bottom = sim[len(sim)-5:len(sim)]
 
@@ -27,7 +27,7 @@ for i in bottom:
 	f.write("\n" + str(round(i[0],2)) + "\t" +mov[i[1]] )
 
 
-sim = re.getRecommendations(data,'1162')
+sim = re.topMatches(data,'1162')
 top = sim[0:5]
 bottom = sim[len(sim)-5:len(sim)]
 
