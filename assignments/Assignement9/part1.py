@@ -16,7 +16,7 @@ for line in g:
   tmp = line.split(' ')[1].strip('\n')
   cat.append(tmp)
 
-num = 90
+num = 50
 
 def q1Train(f,cat,num,classifier):
   # Get feed entries and loop over them
@@ -36,7 +36,8 @@ def q1Train(f,cat,num,classifier):
 
 def q1Test(f,cat,num,classifier):
   print "--- TESTING  ---"
-  h = open("table.txt", "w")
+  #h = open("table10.txt", "w")
+  h = open("table50.txt", "w")
   h.write("title,  pred, act\n")
 
   for entry in f['entries']:
@@ -58,16 +59,14 @@ def q1Test(f,cat,num,classifier):
 
       f.entries[i].pred = cls
       f.entries[i].cls = cat[i]
-      # cls=raw_input('Enter category: ')
-      # cprob = classifier.fisherprob(entry['title'], cls)
-      cprob = classifier.fisherprob(a.items()[b][0], cls)
-      cprob = classifier.fisherprob(c, cls)
+
       print "Guess: "+str(cls)
       print "Actual: "+str(cat[i])
 
       fout = '%s, %s, %s\n' % (re.sub(r'[^\x00-\x7F]+', '', entry['title'][0:30]), cls, cat[i])
       h.write(fout)
-def fmeasure(f, num):
+
+def assess(f, num):
   tp, fp, fn = 0, 0, 0
   for i in range(num, 100):
     if(f.entries[i].pred == f.entries[i].cls):
@@ -77,13 +76,15 @@ def fmeasure(f, num):
     if(not f.entries[i].pred):
       fn +=1
 
-  prec = float(tp)/(tp + fp)
-  recl = float(tp)/(tp +fn)
+  precision = float(tp)/(tp + fp)
+  recall = float(tp)/(tp +fn)
 
-  fmeasure = 2*(prec*recl)/(prec+recl)
-  print prec, recl
+  fmeasure = 2*(precision*recall)/(precision+recall)
+  print "\n-----------------------------------------"
+  print precision, recall
   print fmeasure
+  print "-----------------------------------------\n"
 
 q1Train(f, cat, num, cl)
 q1Test(f, cat, num, cl)
-fmeasure(f,num)
+assess(f,num)
